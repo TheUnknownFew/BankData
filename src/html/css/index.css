@@ -1,0 +1,24 @@
+.form-grid {
+    width: 50%;
+    display: grid;
+}
+
+.top-left {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.top-right {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.bottom-left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.bottom-right {
+    grid-column: 2;
+    grid-row: 2;
+}

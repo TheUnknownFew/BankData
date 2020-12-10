@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="scripts/main.js"></script>
+    <title>CMPSC 445 Final Project</title>
+</head>
+<body>
+    <form id="predictionForm" onsubmit="return makePrediction()">
+        <div class="form-grid">
+            <div class="top-left">
+                <!-- Bank Client Data -->
+                <h3>Bank Client Data:</h3>
+                <label for="age">Age(yrs) </label><input id="age" name="age" type="text" required><br>
+                <label for="job">Job Type </label>
+                <select id="job" name="job" required>
+                    <option label="Select an Option" value="" selected>
+                    <option label="admin" value="admin.">
+                    <option label="blue-collar" value="blue-collar">
+                    <option label="entrepreneur" value="entrepreneur">
+                    <option label="housemaid" value="housemaid">
+                    <option label="management" value="management">
+                    <option label="retired" value="retired">
+                    <option label="self-employed" value="self-employed">
+                    <option label="services" value="services">
+                    <option label="student" value="student">
+                    <option label="technician" value="technician">
+                    <option label="unemployed" value="unemployed">
+                </select><br>
+
+                <label for="marital">Marital Status </label>
+                <select id="marital" name="marital" required>
+                    <option label="Select an Option" value="" selected>
+                    <option label="divorced" value="divorced">
+                    <option label="married" value="married">
+                    <option label="single" value="single">
+                </select><br>
+
+                <label for="education">Education </label>
+                <select id="education" name="education" required>
+                    <option label="Select an Option" value="" selected>
+                    <option label="basic 4 year" value="basic.4y">
+                    <option label="basic 6 year" value="basic.6y">
+                    <option label="high school" value="high.school">
+                    <option label="illiterate" value="illiterate">
+                    <option label="professional course" value="professional.course">
+                    <option label="university degree" value="university.degree">
+                </select><br>
+
+                <label>Does the client have credit?</label><br>
+                <label for="defaultYes">yes</label><input id="defaultYes" type="radio" name="default" value="yes" required>
+                <label for="defaultNo">no</label><input id="defaultNo" type="radio" name="default" value="no" required><br>
+
+                <label>Does the client have a housing loan?</label><br>
+                <label for="housingYes">yes</label><input id="housingYes" type="radio" name="housing" value="yes" required>
+                <label for="housingNo">no</label><input id="housingNo" type="radio" name="housing" value="no" required><br>
+
+                <label>Does the client have a personal loan?</label><br>
+                <label for="personalYes">yes</label><input id="personalYes" type="radio" name="loan" value="yes" required>
+                <label for="personalNo">no</label><input id="personalNo" type="radio" name="loan" value="no" required><br>
+                <br>
+            </div>
+            <div class="top-right">
+                <!-- Last contact of the current campaign -->
+                <h3>Call Details:</h3>
+                <label for="contact">Contact Type</label>
+                <select id="contact" name="contact" required>
+                    <option label="Select an Option" value="">
+                    <option label="cellular" value="cellular">
+                    <option label="telephone" value="telephone">
+                </select><br>
+
+                <label for="month">Month: </label>
+                <select id="month" name="month" required>
+                    <option label="Select an Option" value="" selected>
+                    <option label="January" value="jan">
+                    <option label="February" value="feb">
+                    <option label="March" value="mar">
+                    <option label="April" value="apr">
+                    <option label="May" value="may">
+                    <option label="June" value="jun">
+                    <option label="July" value="jul">
+                    <option label="August" value="aug">
+                    <option label="September" value="sep">
+                    <option label="October" value="oct">
+                    <option label="November" value="nov">
+                    <option label="December" value="dec">
+                </select><br>
+
+                <label for="day">Day: </label>
+                <select id="day" name="day_of_week" required>
+                    <option label="Select an Option" value="" selected>
+                    <option label="Monday" value="mon">
+                    <option label="Tuesday" value="tue">
+                    <option label="Wednesday" value="wed">
+                    <option label="Thursday" value="thu">
+                    <option label="Friday" value="fri">
+                </select><br>
+
+                <label for="duration">Duration(sec) </label><input id="duration" name="duration" type="text" required><br>
+                <br>
+            </div>
+            <div class="bottom-left">
+                <!-- Other Attributes -->
+                <h3>Other Attributes</h3>
+                <label for="numDuring">Number of contacts performed during campaign </label><br>
+                <input id="numDuring" name="campaign" type="text" required><br><br>
+                <label for="lastContacted">Number of days since last contact </label><br>
+                <input id="lastContacted" name="pdays" type="text" required><br><br>
+                <label for="numBefore">Number of contacts performed before campaign </label><br>
+                <input id="numBefore" name="previous" type="text" required><br><br>
+                <label for="outcome">Outcome of the marketing campaign </label><br>
+                <select id="outcome" name="poutcome" required>
+                    <option label="Select an Option" value="" selected>
+                    <option label="failure" value="failure">
+                    <option label="nonexistent" value="nonexistent">
+                    <option label="success" value="success">
+                </select><br><br>
+            </div>
+            <div class="bottom-right">
+                <!-- Social & Economical context attributes -->
+                <h3>Social & Economical context attributes</h3>
+                <label for="empVarRate">Quarterly employment variation rate </label><br>
+                <input id="empVarRate" name="emp.var.rate" type="text" required><br><br>
+                <label for="priceIndex">Monthly consumer price index </label><br>
+                <input id="priceIndex" name="cons.price.idx" type="text" required><br><br>
+                <label for="confIndex">Monthly consumer confidence index </label><br>
+                <input id="confIndex" name="cons.conf.idx" type="text" required><br><br>
+                <label for="moRate">Daily euribor 3 month rate </label><br>
+                <input id="moRate" name="euribor3m" type="text" required><br><br>
+                <label for="numEmpl">Quarterly number of employees </label><br>
+                <input id="numEmpl" name="nr.employed" type="text" required><br>
+            </div>
+        </div>
+        <input id="predict" value="Make Prediction" type="submit">
+    </form>
+    <br>
+    <div id="output"></div>
+</body>
+</html>
