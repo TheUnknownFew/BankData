@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/2020-12-04 19-43-38.mp4
+/CMPSC_445_Project_ML.ipynb
+/dataset_preprocessing.ipynb
+/FinalReport.docx
+/load_model.ipynb
