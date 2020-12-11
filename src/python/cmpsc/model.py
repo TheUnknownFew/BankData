@@ -25,6 +25,10 @@ encoding_dict = get_encoding_dict()
 
 
 def run_example():
+    """
+    Runs an example data set against the model.
+    :return: Prints the results of the example data set.
+    """
     example_x = normalize(example_data.drop(['month', 'day_of_week', 'y'], axis=1).replace(to_replace=encoding_dict))
     print(model.predict(example_x))
 
@@ -34,6 +38,12 @@ def normalize(df: pd.DataFrame):
 
 
 def make_prediction(json: Dict):
+    """
+    Makes a prediction based on the data passed to it.
+    :param json: The data with features corresponding to model inputs.
+    :return: Returns a prediction from the model.
+    1 -> Data entails likely to subscribe : 0 -> Data entails unlikely to subscribe
+    """
     client_data = pd.DataFrame([json], index=[0])\
         .astype(example_data.dtypes.drop(['y']).to_dict())\
         .drop(['month', 'day_of_week'], axis=1)\
